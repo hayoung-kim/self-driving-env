@@ -6,7 +6,7 @@ public class FieldOfView : MonoBehaviour
 {
 
     public float viewRadius;
-    [Range(0, 360)]
+    [Range(0, 361)]
     public float viewAngle;
 
     public LayerMask targetMask;
@@ -28,7 +28,7 @@ public class FieldOfView : MonoBehaviour
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
 
-        StartCoroutine("FindTargetsWithDelay", .2f);
+        StartCoroutine("FindTargetsWithDelay", 0f);
     }
 
 
