@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 5451945249298545272}
   - component: {fileID: 5451945249298545273}
   - component: {fileID: 5451945249298545274}
-  - component: {fileID: 5451945249298545275}
   - component: {fileID: 5451945249298545276}
   m_Layer: 0
   m_Name: BlueBodyFlip
@@ -217,19 +216,6 @@ MonoBehaviour:
   edgeResolveIterations: 4
   edgeDstThreshold: 0.5
   viewMeshFilter: {fileID: 5451945251102329901}
---- !u!114 &5451945249298545275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451945249298545268}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697d466fd1f28ce4ca548b5f235d7c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 6
 --- !u!114 &5451945249298545276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   speed: 3
+  distanceTravelled: 0
+  speedLimit: 9
+  steps: 0
 --- !u!1 &5451945251102329902
 GameObject:
   m_ObjectHideFlags: 0
