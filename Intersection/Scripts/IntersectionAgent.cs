@@ -10,6 +10,7 @@ public class IntersectionAgent : Agent
     CollisionChecker cc;
 
     public Transform goalPosition;
+    private bool done_ = false;
     void Start()
     {
         pf = GetComponent<PathFollower>();
@@ -23,6 +24,7 @@ public class IntersectionAgent : Agent
         pf.distanceTravelled = Random.value * 3.0f;
         pf.speed = 0f;
         cc.collide = false;
+        done_ = false;
     }
 
     public GameObject[] otherCars;
@@ -52,23 +54,34 @@ public class IntersectionAgent : Agent
     {
         // Actions, size = 1
         pf.speed += vectorAction[0];
-
-        // (1) speed reward
-        SetReward(-0.001f);
-
+        
         // (2) Collision reward
         if (cc.collide)
         {
-            SetReward(-1.0f);
+            if (!done_)
+            {
+                // 이게 있어야 한번만 들어옴
+                AddReward(-1.0f);
+            }
+
             Done();
+            done_ = true;
         }
 
         // (3) Reached target reward (goal)
         if (this.transform.position.z - goalPosition.transform.position.z <= 0)
         {
-            SetReward(1.0f);
+            if (!done_) // 있어야 한번만 들어옴
+            {
+                AddReward(1.0f);
+            }
+
             Done();
+            done_ = true;
         }
+
+        // (1) efficiency
+        AddReward(-0.001f);
 
 
     }

@@ -10,6 +10,7 @@ public class PathFollower : MonoBehaviour
     public float distanceTravelled;
     public float speedLimit = 9;
     public float dt = 0.1f;
+    public int carID = 0;
 
     // Update is called once per frame
     public int steps = 0;
@@ -19,6 +20,6 @@ public class PathFollower : MonoBehaviour
         distanceTravelled += speed * dt;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
         transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
-
     }
+
 }
