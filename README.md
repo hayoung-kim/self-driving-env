@@ -1,7 +1,18 @@
 # self-driving-env
+![env](env.PNG)
+
 unity ml agent envs for self driving cars
 
+soft actor critic example: https://youtu.be/YdEZhCyIqrs
 
+
+
+## todo
+
+- driver model
+- occlusion visualization
+
+- multi-env
 
 
 
